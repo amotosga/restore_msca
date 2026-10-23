@@ -1,0 +1,305 @@
+
+*{box-sizing:border-box;margin:0}
+body{width:1440px;background:#FBF8F4;color:#2E2C2C;font-family:'Geist',sans-serif;font-size:18px;line-height:1.6}
+h1,h2,h3{font-family:'Instrument Sans',sans-serif;color:#2E2C2C}
+h1{font-size:56px;font-weight:700;line-height:1.1}
+h2{font-size:36px;font-weight:700;line-height:1.2}
+h3{font-size:24px;font-weight:600;line-height:1.3}
+.small{font-size:14px;color:#6F6A6A}
+.wrap{width:1200px;margin:0 auto}
+header{background:#FBF8F4;padding:16px 120px;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:50%;background:#86A664}
+.menu{display:flex;gap:32px}
+section{padding:80px 0}
+.soft{background:#F7E9E0}
+.label{font-size:14px;font-weight:600;color:#4C6A38;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.lead{color:#6F6A6A;max-width:760px;margin-top:20px}
+.btns{display:flex;gap:16px;margin-top:32px}
+.btn{background:#4C6A38;color:#FFFFFF;padding:14px 28px;border-radius:999px;font-weight:600}
+.btn.o{background:transparent;color:#4C6A38;border:2px solid #4C6A38}
+.row{display:flex;gap:24px;margin-top:32px}
+.card{flex:1;background:#FFFFFF;border-radius:16px;padding:28px}
+.card p{color:#6F6A6A;font-size:16px;margin-top:8px}
+.num{width:36px;height:36px;border-radius:50%;background:#ECC3AC;color:#2E2C2C;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.date{font-size:14px;font-weight:600;color:#4C6A38;margin-bottom:6px}
+.two{display:flex;gap:48px;margin-top:32px}
+.two>div{flex:1}
+.two p{color:#6F6A6A;margin-top:8px}
+.note{background:#FFFFFF;border-left:4px solid #86A664;padding:16px 24px;margin-top:32px;color:#6F6A6A;font-size:16px}
+.photo{width:260px;height:260px;border-radius:50%;background:#ECC3AC}
+.sub{margin-top:40px}
+footer{background:#FFFFFF;padding:40px 120px;color:#6F6A6A;font-size:14px}
+footer p{margin-top:8px;max-width:900px}
+
+/* Responsive layout: preserves the original Figma palette and typography. */
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{width:100%;min-width:0}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid #4C6A38;outline-offset:5px}
+.wrap{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+header{position:sticky;top:0;z-index:10;padding:16px max(24px,calc((100% - 1200px)/2));gap:24px;border-bottom:1px solid #e9e1d9}
+.brand{flex:none;font-family:'Instrument Sans',sans-serif;font-size:24px;font-weight:600}
+.logo{flex:none}
+.menu{gap:clamp(16px,2.1vw,32px);align-items:center;font-size:16px}
+.menu a{white-space:nowrap}
+.menu a:hover{color:#4C6A38;text-decoration:underline;text-underline-offset:5px}
+h1{font-size:clamp(34px,4.5vw,56px);overflow-wrap:break-word}
+h2{font-size:clamp(28px,3vw,36px);overflow-wrap:break-word}
+h3{font-size:clamp(21px,2vw,24px);overflow-wrap:break-word}
+.btns{flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;border:2px solid transparent;line-height:1.4;transition:background .15s}
+.btn:hover{background:#3b552a}
+.btn.o:hover{background:#e8eddf}
+.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.two>div,.card{min-width:0;overflow-wrap:anywhere}
+.two .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+.about-layout{grid-template-columns:260px minmax(0,1fr)}
+.portrait{width:100%}
+.photo{width:min(260px,100%);height:auto;aspect-ratio:1}
+footer{padding:40px max(24px,calc((100% - 1200px)/2))}
+.menu-toggle{display:none;background:transparent;border:1px solid #4C6A38;border-radius:999px;padding:10px 18px;color:#4C6A38;font:inherit;cursor:pointer}
+.skip{position:fixed;left:16px;top:-100px;z-index:20;background:#fff;padding:12px 20px}
+.skip:focus{top:12px}
+@media(max-width:1050px){
+ header{flex-wrap:wrap;gap:12px}
+ .menu{width:100%;justify-content:space-between;gap:12px;flex-wrap:wrap}
+ html{scroll-padding-top:150px}
+ .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .about-layout{grid-template-columns:200px minmax(0,1fr);gap:32px}
+ .two .row{grid-template-columns:1fr}
+ section{padding:64px 0}
+}
+@media(max-width:700px){
+ body{font-size:16px}
+ header{gap:12px;justify-content:space-between;padding:12px 20px}
+ .wrap{width:calc(100% - 40px)}
+ html{scroll-padding-top:88px}
+ section{padding:48px 0}
+ .row,.two,.about-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .card{padding:24px}
+ .btns{gap:12px}
+ .btn{width:100%;padding:13px 20px}
+ .photo{width:200px}
+ .sub{margin-top:32px}
+ footer{padding:32px 20px}
+ .menu{align-items:stretch;flex-direction:column;gap:0}
+ .menu a{padding:12px 0;border-top:1px solid #e9e1d9}
+ .js .menu-toggle{display:block}
+ .js .menu{display:none}
+ .js .menu.is-open{display:flex}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+
+/* Project logo and title layout. Replace the two embedded logo sources
+   with your final logo image (for example, src="logo.svg"). */
+.header-logo{display:block;width:80px;height:80px;object-fit:contain}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:48px}
+.hero-copy,.hero-art{min-width:0}
+.project-logo{display:block;width:100%;max-width:400px;height:auto;margin-inline:auto;object-fit:contain}
+.menu{gap:18px;font-size:15px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:1200px) and (min-width:701px){
+ header{flex-wrap:wrap;gap:12px}
+ .menu{width:100%;justify-content:space-between}
+ html{scroll-padding-top:156px}
+}
+@media(max-width:1050px){.hero-layout{gap:28px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}}
+@media(max-width:700px){
+ .hero-layout{grid-template-columns:minmax(0,1fr);gap:32px}
+ .project-logo{max-width:280px}
+ .menu{justify-content:flex-start}
+}
+
+
+#home {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#home .hero-layout {
+  position: relative;
+  display: block;
+}
+
+#home .hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+/* Imagen grande, desplazada hacia la derecha */
+#home .hero-art {
+  position: absolute;
+  z-index: 0;
+  width: 450px;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#home .project-logo {
+  width: 100%;
+  max-width: none;
+  opacity: 0.4;
+ 
+
+  /* Desvanece el borde izquierdo, donde coincide con el texto */
+  -webkit-mask-image: linear-gradient(
+    to right, transparent 0%, black 40%
+  );
+  mask-image: linear-gradient(
+    to right, transparent 0%, black 40%
+  );
+}
+
+@media (max-width: 700px) {
+  #home .hero-art {
+    width: 420px;
+    right: -180px;
+  }
+
+  #home .project-logo {
+    opacity: 0.10;
+  }
+}
+
+#home       { background-color: #FBF8F4; }
+#project    { background-color: #F7E9E0; }
+#news       { background-color: #FBF8F4; }
+#activities { background-color: #F7E9E0; }
+#about      { background-color: #FBF8F4; }
+#team       { background-color: #F7E9E0; }
+#msca       { background-color: #FBF8F4; }
+#contact    { background-color: #F7E9E0; }
+
+.eu-emblem {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+img.photo {
+  display: block;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* New section layouts */
+[hidden]{display:none!important}
+.text-link{color:#4C6A38;text-decoration:underline;text-underline-offset:4px}
+.reference{font-size:14px;white-space:nowrap}
+.tabs{display:none;flex-wrap:wrap;gap:12px;margin-top:28px}
+.js .tabs{display:flex}
+.tab{font:inherit;font-size:16px;font-weight:600;cursor:pointer;border:1px solid #4C6A38;border-radius:999px;padding:10px 22px;color:#4C6A38;background:transparent}
+.tab[aria-selected="true"]{background:#4C6A38;color:#fff}
+.tab:focus-visible{outline:3px solid #4C6A38;outline-offset:4px}
+.activity-panel{margin-top:24px}
+.activity-panel .row{margin-top:16px}
+.js .panel-heading{display:none}
+.news-card{display:flex;flex-direction:column;align-items:flex-start;background:#F7E9E0}
+.news-card .text-link{margin-top:20px}
+#about .about-layout{grid-template-columns:240px minmax(0,1fr);align-items:start}
+#about .photo{width:240px;max-width:100%}
+.institution{display:inline-block;background:#e8eddf;color:#4C6A38;border-left:4px solid #86A664;border-radius:0 10px 10px 0;padding:14px 20px;margin-top:20px;font-weight:600}
+.institution span{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.profile-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:32px}
+.profile-details .card{background:#F7E9E0}
+ol{padding-left:24px;margin-top:12px;color:#6F6A6A;font-size:16px}
+li+li{margin-top:10px}
+.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.social-link{display:inline-flex;gap:9px;align-items:center;border:1px solid #d5d7c9;padding:10px 14px;border-radius:999px;font-size:14px;color:#4C6A38}
+.social-link:hover[href]{background:#e8eddf}
+.social-link[aria-disabled="true"]{opacity:.65;cursor:default}
+.social-link svg{display:block;flex:none;width:24px;height:24px}
+.team-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.team-head>div{min-width:0}
+.team-photo{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover;background:#ECC3AC}
+.team-card .socials{gap:8px}
+.team-card .social-link{padding:8px 10px}
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:32px}
+.story-card{display:flex;flex-direction:column;align-items:flex-start;background:#F7E9E0}
+.story-card .text-link{margin-top:20px}
+.funding{display:flex;align-items:center;gap:24px;margin-bottom:20px}
+.funding .eu-emblem{width:180px;max-width:100%;height:auto;flex:none;margin:0}
+.funding p{margin:0}
+.contact-email{display:inline-block;color:#4C6A38;font-size:clamp(20px,3vw,28px);overflow-wrap:anywhere;margin-top:20px}
+.article-wrap{max-width:800px;margin-inline:auto;padding:64px 24px 80px}
+.article-wrap h1{font-size:clamp(32px,4.5vw,48px);margin-top:24px}
+.article-wrap h2{font-size:28px;margin-top:36px}
+.article-wrap p{margin-top:16px;color:#6F6A6A}
+.article-wrap .label{margin-top:24px}
+.article-wrap .note p{margin:0}
+@media(max-width:1050px){#about .about-layout{grid-template-columns:200px minmax(0,1fr)}}
+@media(max-width:700px){
+ #about .about-layout,.profile-details,.story-grid{grid-template-columns:minmax(0,1fr)}
+ #about .photo{width:200px}
+ .funding{align-items:flex-start;flex-direction:column;gap:16px}
+ .tabs{gap:8px}.tab{font-size:14px;padding:10px 16px}
+ .article-wrap{padding:40px 20px 56px}
+ .team-head h3{font-size:20px}
+}
+
+/* White cards on light sections; retain the Figma palette. */
+.card,#news .news-card,#about .profile-details .card,#msca .story-card{background:#fff}
+.why-matters{background:#fff}
+.research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#about .institution{margin-top:0;margin-bottom:20px}
+.doi-link{display:inline-flex;gap:6px;align-items:center;vertical-align:middle;font-size:13px;color:#4C6A38;text-decoration:none;margin-top:10px;white-space:nowrap}
+.doi-link svg{width:32px;height:24px;flex:none}
+.doi-link:hover span{text-decoration:underline}
+.publications-card,.projects-card{grid-column:1/-1}
+.publications-card li{padding-bottom:16px;border-bottom:1px solid #eee6dd}
+.publications-card li:last-child{border:0;padding-bottom:0}
+.publications-card .doi-link{margin-left:8px}
+.projects-card>ol>li{padding-block:12px 22px;border-bottom:1px solid #eee6dd}
+.projects-card>ol>li:last-child{border-bottom:0;padding-bottom:0}
+.projects-card li strong{color:#2E2C2C}
+.project-id{display:block;font-size:13px;margin-top:4px}
+.project-meta{display:grid;gap:10px;margin-top:14px;font-size:14px}
+.project-meta>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px}
+.project-meta dt{font-weight:600;color:#4C6A38}
+.project-meta dd{margin:0}
+.institutional-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:24px;margin-top:36px;padding-top:24px;border-top:1px solid #eee6dd}
+.institutional-logos a{display:flex;align-items:center;justify-content:center;min-width:80px;max-width:160px}
+.institutional-logos img{display:block;max-width:150px;max-height:64px;width:auto;height:auto;object-fit:contain}
+@media(max-width:700px){
+ .research-grid{grid-template-columns:minmax(0,1fr)}
+ .publications-card,.projects-card{grid-column:auto}
+ .project-meta>div{grid-template-columns:minmax(0,1fr);gap:2px}
+ .institutional-logos{gap:20px;justify-content:flex-end}
+ .institutional-logos a{max-width:120px}
+ .institutional-logos img{max-width:110px;max-height:50px}
+}
+
+/* Etiqueta DOI alineada con el texto */
+.publications-card .doi-link {
+  display: inline-flex;
+  vertical-align: middle;
+  margin: 0 0 0 6px;
+}
+
+.publications-card .doi-link svg {
+  width: 30px;
+  height: 22px;
+}
+
+.publications-card .doi-link {
+  position: relative;
+  top: -2px;
+}
+
+#activities .doi-link {
+  display: inline-flex;
+  vertical-align: middle;
+  margin: 0 0 0 6px;
+  position: relative;
+  top: -2px;
+}
