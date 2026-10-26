@@ -304,21 +304,4 @@ li+li{margin-top:10px}
   top: -2px;
 }
 
-.under-construction {
-  margin-top: 40px;
-  padding: 48px 24px;
-  text-align: center;
-  background: #FFFFFF;
-  border-radius: 16px;
-}
 
-.under-construction .crane {
-  display: block;
-  font-size: 80px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.under-construction h2 {
-  margin-top: 0;
-}
